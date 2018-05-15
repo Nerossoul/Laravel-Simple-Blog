@@ -178,8 +178,10 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // OUR packages
-
         Unisharp\Ckeditor\ServiceProvider::class,
+
+        // OUR Providers
+        App\Providers\BlogServiceProvider::class,
 
     ],
 

@@ -3,19 +3,17 @@
 @section('title', $category->title)
 
 @section('content')
-
-    <div class="container">
+  <div class="w3-container w3-content w3-padding">
     @forelse ($articles as $article)
-      <div class="row">
-        <div class="col-sm-12">
-          <h2> <a href="{{route('article', $article->slug)}}">{{$article->title}}</a> </h2>
-          {!!$article->description_short!!}
-        </div>
-      </div>
+        <a href="#spoiler-open-{{$article->id}}" id="spoiler-open-{{$article->id}}" class="spoiler_open w3-padding">
+          <span class="underlined ">{{$article->description_short}}</span>
+        </a>
+        <a href="#spoiler-close-{{$article->id}}" id="spoiler-close-{{$article->id}}" class="spoiler_close w3-padding">
+          <span class="underlined">{!!$article->description!!}</span>
+        </a>
     @empty
       <h2 class="text-centre">Пусто</h2>
     @endforelse
-    {{$articles->links()}}
-    </div>
+</div>
 
 @endsection

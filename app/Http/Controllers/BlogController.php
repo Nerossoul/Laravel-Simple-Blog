@@ -11,11 +11,18 @@ use App\Article;
 class BlogController extends Controller
 {
 
+    public function mainPage() {
+      $main_categorues = Category::where('parent_id', 0)->get();
+      return view('blog.home',[
+        'categories' => $main_categorues
+      ]);
+    }
+
     public function category($slug) {
       $category = Category::where('slug', $slug)->first();
       return view('blog.category', [
         'category'=>$category,
-        'articles'=>$category->articles()->where('published', 1)->paginate(1000)
+        'articles'=>$category->articles()->where('published', 1)->get()//->paginate(1000)
         ]);
     }
 

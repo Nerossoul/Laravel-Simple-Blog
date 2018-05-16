@@ -981,7 +981,6 @@ __webpack_require__(11);
 
 //CKEDITOR
 $(document).ready(function () {
-  CKEDITOR.replace('description-short');
   CKEDITOR.replace('description');
 });
 

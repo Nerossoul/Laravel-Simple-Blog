@@ -3,9 +3,9 @@
 @section('content')
 
   @component('admin.components.breadcrumb')
-    @slot('title') Список новостей @endslot
+    @slot('title') Список статей @endslot
     @slot('parent') Главная @endslot
-    @slot('active') Новости @endslot
+    @slot('active') Статьи @endslot
   @endcomponent
 
   <hr>

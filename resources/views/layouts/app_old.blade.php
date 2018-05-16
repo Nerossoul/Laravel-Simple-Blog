@@ -89,33 +89,7 @@
     </div>
 
     <!-- Scripts -->
-    <script>
-    function openLeftMenu() {
-      sidebar =   document.getElementById("leftMenu");
-        sidebar.style.display = "block";
-    }
-    function closeLeftMenu() {
-        sidebar.style.width = '50px';
-        sidebar.style.opacity = 0;
-        setTimeout(function() {
-          sidebar.style.display = "none";
-          sidebar.style.width = '66%';
-          sidebar.style.opacity = 1;
-        }, 300);
-    }
-    function myAccFunc(id) {
-        var x = document.getElementById(id);
-        //console.log('elem: ' + x);
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-            x.previousElementSibling.className += " anonov-second-color";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-            x.previousElementSibling.className =
-            x.previousElementSibling.className.replace(" anonov-second-color", "");
-        }
-    }
-    </script>
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

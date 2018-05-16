@@ -1,55 +1,36 @@
 <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
+<!-- sidebar -->
+        <div class="anonov-main-color w3-sidebar w3-animate-left anonov-main-color w3-card" style="display:none;" id="leftMenu">
+          <div class="w3-bar anonov-main-color  w3-xxlarge w3-margin-bottom">
+            <a href="#" class="w3-bar-item w3-button" onclick="closeLeftMenu()"><i class="fa fa-arrow-left"></i></a>
+            <!-- Authentication Link -->
+            @guest
+                <a href="{{ route('login') }}" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+            @else
+              <a href="{{ route('admin.index') }}" title="{{ Auth::user()->name }}" class="w3-bar-item w3-button">
+                <i class="fa fa-user"></i>
+              </a>
+              <a href="{{ route('admin.index') }}" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+              <a href="{{ route('logout') }}" class="w3-bar-item w3-button" onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+              </a>
 
-            <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
 
-            <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
+            @endguest
+
+          </div>
+          <div class="w3-bar-block w3-card anonov-main-color" style="text-decoration: none;">
+              @include('layouts.top_menu', ['categories' => $categories ])
+          </div>
         </div>
 
-        <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
-                @include('layouts.top_menu', ['categories' => $categories ])
-            </ul>
+<!-- header -->
+      <div class="w3-container w3-card anonov-main-color">
+        <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button> Строка меню</h2>
+      </div>
 
-            <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right">
-                <!-- Authentication Links -->
-                @guest
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                @endguest
-            </ul>
-        </div>
-    </div>
 </nav>

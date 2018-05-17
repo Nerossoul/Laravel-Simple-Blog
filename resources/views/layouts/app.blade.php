@@ -28,6 +28,10 @@
   text-decoration:none;
 }
 
+.no_underlined:hover {
+  text-decoration:none;
+}
+
 .spoiler_open, .spoiler_close {
     display: block;
     width: 100%;
@@ -89,7 +93,7 @@
     <div id="app">
 
         @include('layouts.header')
-    <div id="ajax_category_target">
+    <div id="ajax_category_target" onclick="closeLeftMenu()">
         @yield('content')
     </div>
     </div>
@@ -101,6 +105,8 @@
         sidebar.style.display = "block";
     }
     function closeLeftMenu() {
+      console.log('close');
+      sidebar =   document.getElementById("leftMenu");
         sidebar.style.width = '50px';
         sidebar.style.opacity = 0;
         setTimeout(function() {

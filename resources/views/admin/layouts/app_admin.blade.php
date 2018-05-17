@@ -169,8 +169,9 @@
 
 
       </nav>
-
-        @yield('content')
+      <div onclick="closeLeftMenu()">
+          @yield('content')
+      </div>
     </div>
 
     <!-- Scripts -->

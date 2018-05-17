@@ -10,9 +10,9 @@
 
   <hr>
 
-  <a href="{{route('admin.article.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Создать новость</a>
+  <a href="{{route('admin.article.create')}}" class="btn btn-primary pull-right anonov-main-color"><i class="fa fa-plus-square-o"></i> Создать статью</a>
 
-  <table class="table table-striped">
+  <table class="table">
     <thead>
       <th>Наименование</th>
       <th>Публикация</th>

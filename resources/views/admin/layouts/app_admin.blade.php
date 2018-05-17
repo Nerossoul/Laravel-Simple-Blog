@@ -11,92 +11,195 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+
+    .underlined {
+      text-decoration:underline;
+    }
+
+    .no_underlined{
+      text-decoration:none;
+    }
+
+    .no_underlined:hover {
+      text-decoration:none;
+    }
+    .spoiler_open, .spoiler_close {
+        display: block;
+        width: 100%;
+        padding-top: 15px;
+        background: #fff;
+        color: #000;
+        cursor: default;
+        text-decoration:none;
+    }
+
+    .spoiler_close {
+        display: none;
+    }
+    .spoiler_desc {
+        display: none;
+        width: 100%;
+        background: #fff;
+        text-decoration: none;
+        color: #000;
+        cursor: default;
+    }
+    .spoiler_open:target {
+        display: none;
+    }
+    .spoiler_open:target + .spoiler_close,
+    .spoiler_open:target + .spoiler_close + .spoiler_desc {
+        display: block;
+    }
+
+    #leftMenu {
+      width:66%;
+      max-width: 400px;
+      opacity: 1;
+      text-transform: uppercase;
+      transition-property: width, opacity;
+      transition-duration: .3s;
+    }
+
+    .anonov-main-color {
+      background-color: #42505D !important;
+      color: #F9D5A6 !important;
+    }
+
+    .anonov-second-color {
+      background-color: #F9D5A6 !important;
+      color: #42505D !important;
+    }
+
+    .anonov-main-text-color {
+      color: #F9D5A6 !important;
+    }
+
+    .anonov-second-text-color {
+      color: #42505D !important;
+    }
+    </style>
 
     <!-- font-awesome -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
 </head>
-<body>
+<body class="anonov-second-color">
+
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+      <nav class="navbar navbar-default navbar-static-top">
+      <!-- sidebar -->
+              <div class="anonov-main-color w3-sidebar w3-animate-left anonov-main-color w3-card" style="display:none;" id="leftMenu">
+                <div class="w3-bar anonov-main-color  w3-xxlarge w3-margin-bottom">
+                  <a href="#" class="w3-bar-item w3-button" onclick="closeLeftMenu()"><i class="fa fa-arrow-left"></i></a>
+                  <!-- Authentication Link -->
+                  @guest
+                      <a href="{{ route('login') }}" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+                  @else
+                    <a href="{{ route('admin.index') }}" title="{{ Auth::user()->name }}" class="w3-bar-item w3-button">
+                      <i class="fa fa-user"></i>
                     </a>
+                    <a href="{{ route('admin.index') }}" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+                    <a href="{{ route('logout') }}" class="w3-bar-item w3-button" onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+
+                  @endguest
+
                 </div>
+                <div class="w3-bar-block w3-card anonov-main-color" style="text-decoration: none;">
+                  @guest
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                      <li>
-                        <a href="{{route('admin.index')}}">Панель состояния</a>
-                      </li>
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
-                          <ul class="dropdown-menu" role="menu">
-                            <li> <a href="{{route('admin.category.index')}}">Категории</a></li>
-                            <li> <a href="{{route('admin.article.index')}}">Текст</a></li>
-                          </ul>
-                        </li>
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Управление пользователями</a>
-                          <ul class="dropdown-menu" role="menu">
-                            <li> <a href="{{route('admin.user_managment.user.index')}}">Пользователи</a></li>
-                          </ul>
-                        </li>
-                        <li>
-
-                        </li>
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
+                  @else
+                  <div class="w3-bar-item w3-card anonov-main-color" onclick="myAccFunc('menu_accordion_1')">
+                      <a href="#" class="anonov-main-text-color no_underlined">
+                          <strong>{{ Auth::user()->name }} <span class="caret"></span></strong>
+                      </a>
+                  </div>
+                  <div id="menu_accordion_1" class="w3-bar-item w3-hide w3-card-4">
+                      <a href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();" class="anonov-main-text-color" class="anonov-main-text-color no_underlined">
+                          Logout
+                      </a>
+                  </div>
+                  <div class="w3-bar-item w3-card anonov-main-color">
+                      <a href="#" class="anonov-main-text-color">
+                          <a href="{{route('admin.index')}}" class="anonov-main-text-color no_underlined">Панель состояния</a>
+                      </a>
+                  </div>
+                  <div class="w3-bar-item w3-card anonov-main-color">
+                      <a href="#" class="anonov-main-text-color">
+                          <a href="{{route('admin.category.index')}}" class="anonov-main-text-color no_underlined">Категории</a>
+                      </a>
+                  </div>
+                  <div class="w3-bar-item w3-card anonov-main-color">
+                      <a href="#" class="anonov-main-text-color">
+                          <a href="{{route('admin.article.index')}}" class="anonov-main-text-color no_underlined">Статьи</a>
+                      </a>
+                  </div>
+                  <!--div class="w3-bar-item w3-card anonov-main-color">
+                      <a href="#" class="anonov-main-text-color">
+                          <a href="{{route('admin.user_managment.user.index')}}" class="anonov-main-text-color no_underlined">Пользователи</a>
+                      </a>
+                  </div-->
+                  <div class="w3-bar-item w3-card anonov-main-color">
+                  <a href="{{route('index')}}" class="anonov-main-text-color no_underlined">Вернуться на сайт</a>
+                  </div>
+                  @endguest
                 </div>
+              </div>
+
+      <!-- header -->
+            <div class="w3-row w3-padding  w3-xlarge anonov-main-color">
+                <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button> <a href="{{route('admin.index')}}" class="no_underlined anonov-main-text-color">Панель управления</a></h2>
             </div>
-        </nav>
+
+
+      </nav>
 
         @yield('content')
     </div>
 
     <!-- Scripts -->
+    <script>
+    function openLeftMenu() {
+      sidebar =   document.getElementById("leftMenu");
+        sidebar.style.display = "block";
+    }
+    function closeLeftMenu() {
+        sidebar.style.width = '50px';
+        sidebar.style.opacity = 0;
+        setTimeout(function() {
+          sidebar.style.display = "none";
+          sidebar.style.width = '66%';
+          sidebar.style.opacity = 1;
+        }, 300);
+    }
+    function myAccFunc(id) {
+        var x = document.getElementById(id);
+        //console.log('elem: ' + x);
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          //  x.previousElementSibling.className += " anonov-second-color";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+          //  x.previousElementSibling.className.replace(" anonov-second-color", "");
+        }
+    }
+    </script>
      <script src="{{ asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

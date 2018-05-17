@@ -85,7 +85,7 @@
 }
 </style>
 </head>
-<body>
+<body class="anonov-second-color">
     <div id="app">
 
         @include('layouts.header')

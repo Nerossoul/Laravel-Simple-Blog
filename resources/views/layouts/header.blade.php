@@ -30,7 +30,7 @@
 
 <!-- header -->
       <div class="w3-container w3-card anonov-main-color">
-        <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button> Строка меню</h2>
+        <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button> Wisdom</h2>
       </div>
 
 </nav>

@@ -105,7 +105,6 @@
         sidebar.style.display = "block";
     }
     function closeLeftMenu() {
-      console.log('close');
       sidebar =   document.getElementById("leftMenu");
         sidebar.style.width = '50px';
         sidebar.style.opacity = 0;

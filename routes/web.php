@@ -12,6 +12,7 @@
 */
 Route::get('/blog/category/{slug?}', 'BlogController@category' )->name('category');
 Route::get('/blog/article/{slug?}', 'BlogController@article' )->name('article');
+Route::get('/ajax_category/{slug}', 'BlogController@ajaxCategory')->name('ajax.category');
 
 /*Route::get('/blog/category/{slug?}', function ($slug) {
     echo '$slug';
@@ -27,6 +28,8 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']],f
 });
 
 Route::get('/', 'BlogController@mainPage')->name('index');
+
+
 
 /*Route::get('/', function () {
     return view('blog.home');

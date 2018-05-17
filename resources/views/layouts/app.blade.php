@@ -89,8 +89,9 @@
     <div id="app">
 
         @include('layouts.header')
-
+    <div id="ajax_category_target">
         @yield('content')
+    </div>
     </div>
 
     <!-- Scripts -->
@@ -119,7 +120,41 @@
           //  x.previousElementSibling.className.replace(" anonov-second-color", "");
         }
     }
-    </script>
+</script>
+
+<script>
+console.log('before');
+
+function SendGet(slug) {
+
+  'use strict';
+
+  // находим необходимый селектор
+  var target_div = document.getElementById('ajax_category_target');
+
+  // устанавливаем запрос
+  var request = new XMLHttpRequest();
+
+  // отслеживаем запрос
+  request.onreadystatechange = function() {
+    // проверяем вернулись запрошенные данные
+    if(request.readyState === 4) {
+      // проверяем успешен ли запрос
+      if(request.status === 200) {
+        // обнавляем элемент HTML
+        target_div.innerHTML = request.responseText;
+      } else {
+        // иначе выводим сообщение об ошибке
+        target_div.innerHTML = 'Произошла ошибка при запросе: ' +  request.status + ' ' + request.statusText;
+      }
+    }
+  }
+  // определяем тип запроса
+  request.open('Get', "{{url('ajax_category')}}"+'/'+slug);
+  request.send();
+};
+
+</script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

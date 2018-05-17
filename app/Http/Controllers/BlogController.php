@@ -26,6 +26,14 @@ class BlogController extends Controller
         ]);
     }
 
+    public function ajaxCategory($slug) {
+      $category = Category::where('slug', $slug)->first();
+      return view('blog.ajax_category', [
+        'category'=>$category,
+        'articles'=>$category->articles()->where('published', 1)->orderBy('created_at', 'asc')->get()//->paginate(1000)
+        ]);
+    }
+
     public function article($slug) {
       return view('blog.article', [
         'article'=>Article::where('slug', $slug)->first()

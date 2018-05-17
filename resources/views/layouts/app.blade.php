@@ -13,16 +13,21 @@
     <meta name="description" content="@yield('meta_description')">
 
     <!-- Styles -->
-    <link href="style.css" rel="stylesheet">
     <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <style>
+
 .underlined {
   text-decoration:underline;
 }
+
+.no_underlined{
+  text-decoration:none;
+}
+
 .spoiler_open, .spoiler_close {
     display: block;
     width: 100%;
@@ -63,7 +68,7 @@
 
 .anonov-main-color {
   background-color: #42505D !important;
-  color: #F9D5A6;
+  color: #F9D5A6 !important;
 }
 
 .anonov-second-color {
@@ -72,11 +77,11 @@
 }
 
 .anonov-main-text-color {
-  color: #F9D5A6;
+  color: #F9D5A6 !important;
 }
 
 .anonov-second-text-color {
-  color: #42505D;
+  color: #42505D !important;
 }
 </style>
 </head>
@@ -108,11 +113,10 @@
         //console.log('elem: ' + x);
         if (x.className.indexOf("w3-show") == -1) {
             x.className += " w3-show";
-            x.previousElementSibling.className += " anonov-second-color";
+          //  x.previousElementSibling.className += " anonov-second-color";
         } else {
             x.className = x.className.replace(" w3-show", "");
-            x.previousElementSibling.className =
-            x.previousElementSibling.className.replace(" anonov-second-color", "");
+          //  x.previousElementSibling.className.replace(" anonov-second-color", "");
         }
     }
     </script>

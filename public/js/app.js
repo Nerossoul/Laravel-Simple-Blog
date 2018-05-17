@@ -981,7 +981,9 @@ __webpack_require__(11);
 
 //CKEDITOR
 $(document).ready(function () {
-  CKEDITOR.replace('description');
+  if (document.getElementById('description')) {
+    CKEDITOR.replace('description');
+  }
 });
 
 window.Vue = __webpack_require__(35);

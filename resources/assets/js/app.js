@@ -10,7 +10,10 @@ require('./bootstrap');
 
 //CKEDITOR
 $( document ).ready(function() {
-  CKEDITOR.replace( 'description' );
+  if(document.getElementById('description'))
+       {
+        CKEDITOR.replace( 'description' );
+        }
 });
 
 window.Vue = require('vue');

@@ -31,7 +31,7 @@ class ArticleController extends Controller
         return view('admin.articles.create', [
 
           'article'    => [],
-          'categories' => Category::with('children')->where('parent_id', 0)->get(),
+          'categories' => Category::with('children')->where('parent_id', 0)->orderBy('created_at', 'asc')->get(),
           'delimiter'  => ''
 
         ]);
@@ -78,7 +78,7 @@ class ArticleController extends Controller
       return view('admin.articles.edit', [
 
         'article'    => $article,
-        'categories' => Category::with('children')->where('parent_id', 0)->get(),
+        'categories' => Category::with('children')->where('parent_id', 0)->orderBy('created_at', 'asc')->get(),
         'delimiter'  => ''
 
       ]);
@@ -93,7 +93,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        $request['description_short'] = mb_substr($request['description'], 0, 104);
+        $request['description_short'] = strip_tags(mb_substr($request['description'], 0, 104));
         $article->update($request->except('slug'));
 
         $article->categories()->detach();

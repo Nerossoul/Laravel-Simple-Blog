@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class Article extends Model
 {
   //mass assigned
-  protected $fillable = ['title', 'slug', 'description_short', 'description', 'image', 'image_show', 'meta_title', 'meta_description', 'meta_keyword', 'published', 'created_by', 'modified_by'];
+  protected $fillable = ['title', 'slug', 'description_short', 'description', 'order', 'image', 'image_show', 'meta_title', 'meta_description', 'meta_keyword', 'published', 'created_by', 'modified_by'];
 
   //Mutators
     public function setSlugAttribute($value) {

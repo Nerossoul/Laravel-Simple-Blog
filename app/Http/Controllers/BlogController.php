@@ -12,9 +12,9 @@ class BlogController extends Controller
 {
 
     public function mainPage() {
-      $main_categorues = Category::where('parent_id', 0)->get();
+      $main_categorues = Category::where('parent_id', 0)->orderBy('created_at', 'asc')->get();
       return view('blog.home',[
-        'categories' => $main_categorues
+        'categories' => $main_categorues->where('published', 1)
       ]);
     }
 
@@ -22,7 +22,7 @@ class BlogController extends Controller
       $category = Category::where('slug', $slug)->first();
       return view('blog.category', [
         'category'=>$category,
-        'articles'=>$category->articles()->where('published', 1)->get()//->paginate(1000)
+        'articles'=>$category->articles()->where('published', 1)->orderBy('created_at', 'asc')->get()//->paginate(1000)
         ]);
     }
 

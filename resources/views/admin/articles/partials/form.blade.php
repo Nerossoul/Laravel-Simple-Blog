@@ -19,6 +19,8 @@
 <select class="form-control" name="categories[]"> <!-- multiple=""-->
   @include('admin.articles.partials.categories', ['categories' => $categories])
 </select>
+<!--label for="">Укажите порядковый номер статьи в категории</label>
+<input type="number" class="form-control" name="order" placeholder="0" value="{{$article->order or ""}}"-->
 <!--label for="">Краткое описание</label-->
 <!--textarea name="description_short" id="description-short" class="form-control">{{$article->description_short or ""}}</textarea-->
 

@@ -12,7 +12,7 @@
          ])
     </div>
   @else
-    <div class="">
+    <div class="" onclick="event.preventDefault();SendGet('{{$category->slug}}');closeLeftMenu();">
       <a href="{{url("/blog/category/$category->slug")}}" class="w3-bar-item w3-card ananov-main-color ananov-main-text-color no_underlined"> {!!$delimiter!!} {{$category->title}} </a>
     </div>
   @endif

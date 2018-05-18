@@ -6,8 +6,8 @@
       <div class="w3-container w3-content">
   @forelse ($categories as $category)
 
-     <div class="w3-panel w3-white w3-card w3-display-container">
-       <a href="{{url("/blog/category/$category->slug")}}" class="anonov-second-text-color">
+     <div class="w3-panel w3-card w3-display-container anоnov-second-color">
+       <a href="{{url("/blog/category/$category->slug")}}" class="ananov-second-text-color">
          <h3>{{$category->title}}</h3>
        </a>
      </div>

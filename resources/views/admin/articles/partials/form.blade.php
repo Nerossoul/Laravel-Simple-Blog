@@ -35,5 +35,5 @@
 <input type="text" class="form-control" name="meta_keyword" placeholder="Ключевые слова, через запятую" value="{{$article->meta_keyword or ""}}">
 -->
 <hr />
-
-<input class="btn btn-primary" type="submit" value="Сохранить">
+<input class="btn btn-primary ananov-main-color" type="submit" value="Сохранить">
+<hr />

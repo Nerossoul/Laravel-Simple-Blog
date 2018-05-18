@@ -36,7 +36,7 @@
     display: block;
     width: 100%;
     padding-top: 15px;
-    background: #fff;
+    /*background: #fff;*/
     color: #000;
     cursor: default;
     text-decoration:none;
@@ -48,7 +48,7 @@
 .spoiler_desc {
     display: none;
     width: 100%;
-    background: #fff;
+    /*background: #fff;*/
     text-decoration: none;
     color: #000;
     cursor: default;
@@ -70,26 +70,26 @@
   transition-duration: .3s;
 }
 
-.anonov-main-color {
+.ananov-main-color {
   background-color: #42505D !important;
   color: #F9D5A6 !important;
 }
 
-.anonov-second-color {
+.ananov-second-color {
   background-color: #F9D5A6 !important;
   color: #42505D !important;
 }
 
-.anonov-main-text-color {
+.ananov-main-text-color {
   color: #F9D5A6 !important;
 }
 
-.anonov-second-text-color {
+.ananov-second-text-color {
   color: #42505D !important;
 }
 </style>
 </head>
-<body class="anonov-second-color">
+<body class="ananov-second-color">
     <div id="app">
 
         @include('layouts.header')
@@ -119,10 +119,10 @@
         //console.log('elem: ' + x);
         if (x.className.indexOf("w3-show") == -1) {
             x.className += " w3-show";
-          //  x.previousElementSibling.className += " anonov-second-color";
+          //  x.previousElementSibling.className += " ananov-second-color";
         } else {
             x.className = x.className.replace(" w3-show", "");
-          //  x.previousElementSibling.className.replace(" anonov-second-color", "");
+          //  x.previousElementSibling.className.replace(" ananov-second-color", "");
         }
     }
 </script>

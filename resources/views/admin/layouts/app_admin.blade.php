@@ -67,21 +67,21 @@
       transition-duration: .3s;
     }
 
-    .anonov-main-color {
+    .ananov-main-color {
       background-color: #42505D !important;
       color: #F9D5A6 !important;
     }
 
-    .anonov-second-color {
+    .ananov-second-color {
       background-color: #F9D5A6 !important;
       color: #42505D !important;
     }
 
-    .anonov-main-text-color {
+    .ananov-main-text-color {
       color: #F9D5A6 !important;
     }
 
-    .anonov-second-text-color {
+    .ananov-second-text-color {
       color: #42505D !important;
     }
     </style>
@@ -91,13 +91,13 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 </head>
-<body class="anonov-second-color">
+<body class="ananov-second-color">
 
     <div id="app">
       <nav class="navbar navbar-default navbar-static-top">
       <!-- sidebar -->
-              <div class="anonov-main-color w3-sidebar w3-animate-left anonov-main-color w3-card" style="display:none;" id="leftMenu">
-                <div class="w3-bar anonov-main-color  w3-xxlarge w3-margin-bottom">
+              <div class="ananov-main-color w3-sidebar w3-animate-left ananov-main-color w3-card" style="display:none;" id="leftMenu">
+                <div class="w3-bar ananov-main-color  w3-xxlarge w3-margin-bottom">
                   <a href="#" class="w3-bar-item w3-button" onclick="closeLeftMenu()"><i class="fa fa-arrow-left"></i></a>
                   <!-- Authentication Link -->
                   @guest
@@ -119,52 +119,52 @@
                   @endguest
 
                 </div>
-                <div class="w3-bar-block w3-card anonov-main-color" style="text-decoration: none;">
+                <div class="w3-bar-block w3-card ananov-main-color" style="text-decoration: none;">
                   @guest
 
                   @else
-                  <div class="w3-bar-item w3-card anonov-main-color" onclick="myAccFunc('menu_accordion_1')">
-                      <a href="#" class="anonov-main-text-color no_underlined">
+                  <div class="w3-bar-item w3-card ananov-main-color" onclick="myAccFunc('menu_accordion_1')">
+                      <a href="#" class="ananov-main-text-color no_underlined">
                           <strong>{{ Auth::user()->name }} <span class="caret"></span></strong>
                       </a>
                   </div>
                   <div id="menu_accordion_1" class="w3-bar-item w3-hide w3-card-4">
                       <a href="{{ route('logout') }}"
                           onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();" class="anonov-main-text-color" class="anonov-main-text-color no_underlined">
+                                   document.getElementById('logout-form').submit();" class="ananov-main-text-color" class="ananov-main-text-color no_underlined">
                           Logout
                       </a>
                   </div>
-                  <div class="w3-bar-item w3-card anonov-main-color">
-                      <a href="#" class="anonov-main-text-color">
-                          <a href="{{route('admin.index')}}" class="anonov-main-text-color no_underlined">Панель состояния</a>
+                  <div class="w3-bar-item w3-card ananov-main-color">
+                      <a href="#" class="ananov-main-text-color">
+                          <a href="{{route('admin.index')}}" class="ananov-main-text-color no_underlined">Панель состояния</a>
                       </a>
                   </div>
-                  <div class="w3-bar-item w3-card anonov-main-color">
-                      <a href="#" class="anonov-main-text-color">
-                          <a href="{{route('admin.category.index')}}" class="anonov-main-text-color no_underlined">Категории</a>
+                  <div class="w3-bar-item w3-card ananov-main-color">
+                      <a href="#" class="ananov-main-text-color">
+                          <a href="{{route('admin.category.index')}}" class="ananov-main-text-color no_underlined">Категории</a>
                       </a>
                   </div>
-                  <div class="w3-bar-item w3-card anonov-main-color">
-                      <a href="#" class="anonov-main-text-color">
-                          <a href="{{route('admin.article.index')}}" class="anonov-main-text-color no_underlined">Статьи</a>
+                  <div class="w3-bar-item w3-card ananov-main-color">
+                      <a href="#" class="ananov-main-text-color">
+                          <a href="{{route('admin.article.index')}}" class="ananov-main-text-color no_underlined">Статьи</a>
                       </a>
                   </div>
-                  <!--div class="w3-bar-item w3-card anonov-main-color">
-                      <a href="#" class="anonov-main-text-color">
-                          <a href="{{route('admin.user_managment.user.index')}}" class="anonov-main-text-color no_underlined">Пользователи</a>
+                  <!--div class="w3-bar-item w3-card ananov-main-color">
+                      <a href="#" class="ananov-main-text-color">
+                          <a href="{{route('admin.user_managment.user.index')}}" class="ananov-main-text-color no_underlined">Пользователи</a>
                       </a>
                   </div-->
-                  <div class="w3-bar-item w3-card anonov-main-color">
-                  <a href="{{route('index')}}" class="anonov-main-text-color no_underlined">Вернуться на сайт</a>
+                  <div class="w3-bar-item w3-card ananov-main-color">
+                  <a href="{{route('index')}}" class="ananov-main-text-color no_underlined">Вернуться на сайт</a>
                   </div>
                   @endguest
                 </div>
               </div>
 
       <!-- header -->
-            <div class="w3-row w3-padding  w3-xlarge anonov-main-color">
-                <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button> <a href="{{route('admin.index')}}" class="no_underlined anonov-main-text-color">Панель управления</a></h2>
+            <div class="w3-row w3-padding  w3-xlarge ananov-main-color">
+                <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button> <a href="{{route('admin.index')}}" class="no_underlined ananov-main-text-color">Панель управления</a></h2>
             </div>
 
 
@@ -194,10 +194,10 @@
         //console.log('elem: ' + x);
         if (x.className.indexOf("w3-show") == -1) {
             x.className += " w3-show";
-          //  x.previousElementSibling.className += " anonov-second-color";
+          //  x.previousElementSibling.className += " ananov-second-color";
         } else {
             x.className = x.className.replace(" w3-show", "");
-          //  x.previousElementSibling.className.replace(" anonov-second-color", "");
+          //  x.previousElementSibling.className.replace(" ananov-second-color", "");
         }
     }
     </script>

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-static-top">
 <!-- sidebar -->
-        <div class="anonov-main-color w3-sidebar w3-animate-left anonov-main-color w3-card" style="display:none;" id="leftMenu">
-          <div class="w3-bar anonov-main-color  w3-xxlarge w3-margin-bottom">
+        <div class="ananov-main-color w3-sidebar w3-animate-left ananov-main-color w3-card" style="display:none;" id="leftMenu">
+          <div class="w3-bar ananov-main-color  w3-xxlarge w3-margin-bottom">
             <a href="#" class="w3-bar-item w3-button" onclick="closeLeftMenu()"><i class="fa fa-arrow-left"></i></a>
             <!-- Authentication Link -->
             @guest
@@ -23,13 +23,13 @@
             @endguest
 
           </div>
-          <div class="w3-bar-block w3-card anonov-main-color" style="text-decoration: none;">
+          <div class="w3-bar-block w3-card ananov-main-color" style="text-decoration: none;">
               @include('layouts.top_menu', ['categories' => $categories ])
           </div>
         </div>
 
 <!-- header -->
-      <div class="w3-container w3-card anonov-main-color">
+      <div class="w3-container w3-card ananov-main-color">
         <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button> Wisdom</h2>
       </div>
 

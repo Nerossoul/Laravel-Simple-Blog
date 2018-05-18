@@ -10,7 +10,7 @@
 
   <hr>
 
-  <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right anonov-main-color"><i class="fa fa-plus-square-o"></i> Создать категорию</a>
+  <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right ananov-main-color"><i class="fa fa-plus-square-o"></i> Создать категорию</a>
 
   <table class="table">
     <thead>

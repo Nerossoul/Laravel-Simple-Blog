@@ -87,6 +87,10 @@
 .ananov-second-text-color {
   color: #42505D !important;
 }
+
+.ananov-category-container {
+  padding: 0.01em 10px;
+}
 </style>
 </head>
 <body class="ananov-second-color">

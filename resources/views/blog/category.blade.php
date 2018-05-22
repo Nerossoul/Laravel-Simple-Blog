@@ -3,7 +3,7 @@
 @section('title', $category->title)
 
 @section('content')
-  <div class=".ananov-category-container w3-content w3-padding ananov-second-color">
+  <div class="ananov-category-container w3-content ananov-second-color">
     @forelse ($articles as $article)
         <a href="#spoiler-open-{{$article->id}}" id="spoiler-open-{{$article->id}}" class="spoiler_open ananov-second-text-color">
           <span class="underlined ">{{$article->description_short}}</span>

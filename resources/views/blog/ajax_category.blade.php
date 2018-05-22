@@ -1,5 +1,5 @@
 
-<div class=".ananov-category-container w3-content w3-padding">
+<div class="ananov-category-container w3-content">
     @forelse ($articles as $article)
         <a href="#spoiler-open-{{$article->id}}" id="spoiler-open-{{$article->id}}" class="spoiler_open ananov-second-text-color">
           <span class="underlined ">{{$article->description_short}}</span>

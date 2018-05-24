@@ -30,7 +30,7 @@
 
 <!-- header -->
       <div class="w3-container w3-card ananov-main-color">
-        <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button> Wisdom</h2>
+        <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button><a href="{{route('index')}}" class="ananov-main-text-color">9671731.org</a></h2>
       </div>
 
 </nav>

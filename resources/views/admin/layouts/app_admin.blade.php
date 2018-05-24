@@ -164,7 +164,7 @@
 
       <!-- header -->
             <div class="w3-row w3-padding  w3-xlarge ananov-main-color">
-                <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button> <a href="{{route('admin.index')}}" class="no_underlined ananov-main-text-color">Панель управления</a></h2>
+                <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button> <a href="{{route('index')}}" class="no_underlined ananov-main-text-color">Панель управления</a></h2>
             </div>
 
 

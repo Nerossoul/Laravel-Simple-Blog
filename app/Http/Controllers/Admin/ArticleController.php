@@ -45,7 +45,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request) // write article data to table articles
     {
-        $request['description_short'] = strip_tags(mb_substr($request['description'], 0, 104));
+        $request['description_short'] = strip_tags(mb_substr($request['description'], 0, 101));
         $article = Article::create($request->all());
 
         //categories
@@ -53,7 +53,7 @@ class ArticleController extends Controller
           $article->categories()->attach($request->input('categories'));
         endif;
 
-        return redirect()->route('admin.article.index');
+        return redirect()->route('index');//route('admin.article.index');
     }
 
     /**
@@ -93,7 +93,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        $request['description_short'] = strip_tags(mb_substr($request['description'], 0, 104));
+        $request['description_short'] = strip_tags(mb_substr($request['description'], 0, 101));
         $article->update($request->except('slug'));
 
         $article->categories()->detach();
@@ -101,7 +101,7 @@ class ArticleController extends Controller
           $article->categories()->attach($request->input('categories'));
         endif;
 
-        return redirect()->route('admin.article.index');
+        return redirect()->route('index');//route('admin.article.index');
     }
 
     /**
@@ -114,6 +114,6 @@ class ArticleController extends Controller
     {
       $article->categories()->detach();
       $article->delete();
-      return redirect()->route('admin.article.index');
+      return redirect()->route('index');//route('admin.article.index');
     }
 }

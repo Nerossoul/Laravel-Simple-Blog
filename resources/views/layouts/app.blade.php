@@ -21,7 +21,9 @@
 <style>
 
 .underlined {
-  text-decoration:underline;
+/*  text-decoration:underline;
+  font-weight: bold;/*|bolder|lighter|normal|100|200|300|400|500|600|700|800|900*/
+  color: black;
 }
 
 .no_underlined{
@@ -72,12 +74,12 @@
 
 .ananov-main-color {
   background-color: #42505D !important;
-  color: #F9D5A6 !important;
+  color: #edd8bb !important;/*#F9D5A6 !important;*/
 }
 
 .ananov-second-color {
-  background-color: #F9D5A6 !important;
-  color: #42505D !important;
+  background-color: #F9D5A6 !important;*/
+  color: #42505D !important;*/
 }
 
 .ananov-main-text-color {
@@ -85,7 +87,7 @@
 }
 
 .ananov-second-text-color {
-  color: #42505D !important;
+  color: #2b343d !important;/*#42505D !important;*/
 }
 
 .ananov-category-container {
@@ -97,9 +99,18 @@
     <div id="app">
 
         @include('layouts.header')
-    <div id="ajax_category_target" onclick="closeLeftMenu()">
-        @yield('content')
+    <div style="width:100%" onclick="closeLeftMenu()">
+      <div id="ajax_category_target"  style="margin:auto; min-width: 450px; max-width:450px;">
+          @yield('content')
+      </div>
     </div>
+    @guest
+    @else
+      <div style="margin:auto; min-width: 240px; max-width:300px; margin-top:15px;margin-bottom:15px;">
+        <a href="{{route('admin.article.create')}}" class="btn btn-default ananov-main-color">Создать статью</a>
+        <a href="{{route('admin.category.create')}}" class="btn btn-default ananov-main-color">Создать категорию</a>
+      </div>
+    @endguest
     </div>
 
     <!-- Scripts -->

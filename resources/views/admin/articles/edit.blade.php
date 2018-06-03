@@ -2,18 +2,15 @@
 
 @section('content')
 
-  <div class="container">
+
 
     @component('admin.components.breadcrumb')
       @slot('title') Редактирование статьи @endslot
       @slot('parent') Главная @endslot
       @slot('active') Статьи @endslot
     @endcomponent
-
-
-
         <hr />
-
+<div class="container">
         <form class="from-horozontal" action="{{route('admin.article.update', $article)}}" method="post">
           <input type="hidden" name="_method" value="put">
           {{ csrf_field() }}
@@ -23,7 +20,6 @@
 
           <input type="hidden" name="modified_by" value="{{Auth::id()}}">
         </form>
-
-  </div>
+</div>
 
 @endsection

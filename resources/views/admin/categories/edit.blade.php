@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="container">
+
 
     @component('admin.components.breadcrumb')
       @slot('title') Редактирование категории @endslot
@@ -13,7 +13,7 @@
 
 
         <hr />
-
+  <div class="container">
         <form class="from-horozontal" action="{{route('admin.category.update', $category)}}" method="post">
           <input type="hidden" name="_method" value="put">
           {{ csrf_field() }}

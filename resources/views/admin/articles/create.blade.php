@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="container">
+
 
     @component('admin.components.breadcrumb')
       @slot('title') Создание статьи @endslot
@@ -13,7 +13,7 @@
 
 
         <hr />
-
+  <div class="container">
         <form class="from-horozontal" action="{{route('admin.article.store')}}" method="post">
           {{ csrf_field() }}
 

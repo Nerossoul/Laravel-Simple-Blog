@@ -1,36 +1,34 @@
-<nav class="navbar navbar-default navbar-static-top">
-<!-- sidebar -->
-        <div class="ananov-main-color w3-sidebar w3-animate-left ananov-main-color w3-card" style="display:none;" id="leftMenu">
-          <div class="w3-bar ananov-main-color  w3-xxlarge w3-margin-bottom">
-            <a href="#" class="w3-bar-item w3-button" onclick="closeLeftMenu()"><i class="fa fa-arrow-left"></i></a>
-            <!-- Authentication Link -->
-            @guest
-                <a href="{{ route('login') }}" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-            @else
-              <a href="{{ route('admin.index') }}" title="{{ Auth::user()->name }}" class="w3-bar-item w3-button">
-                <i class="fa fa-user"></i>
-              </a>
-              <a href="{{ route('admin.index') }}" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
-              <a href="{{ route('logout') }}" class="w3-bar-item w3-button" onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                      <i class="fa fa-sign-out" aria-hidden="true"></i>
-              </a>
-
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  {{ csrf_field() }}
-              </form>
-
-            @endguest
-
-          </div>
-          <div class="w3-bar-block w3-card ananov-main-color" style="text-decoration: none;">
-              @include('layouts.top_menu', ['categories' => $categories ])
-          </div>
-        </div>
-
 <!-- header -->
-      <div class="w3-container w3-card ananov-main-color">
-        <h2><button class="w3-button w3-xlarge w3-left" onclick="openLeftMenu()" style='background-color:#42505D'>&#9776;</button><a href="{{route('index')}}" class="ananov-main-text-color">9671731.org</a></h2>
-      </div>
-
+<nav>
+  <div class="nav-wrapper ananov-dark ">
+    <a href="#" data-target="slide-out" class="sidenav-trigger ananov-light-text" style="display: block;"><i class="material-icons">menu</i></a><a href="{{route('index')}}" class="brand-logo ananov-light-text">9671731.org</a>
+  </div>
 </nav>
+
+
+<!-- sidebar -->
+<ul id="slide-out" class="sidenav">
+  <li>
+    <div class="ananov-dark " style="padding-top:10px;">
+      <a href="#" class="sidenav-close ananov-light-text"><i class="ananov-side-icon material-icons">keyboard_arrow_left</i></a>
+      <!-- Authentication Link -->
+      @guest
+        <a href="{{ route('login') }}" class="ananov-light-text"><i class="ananov-side-icon material-icons">exit_to_app</i></a>
+      @else
+        <a href="{{ route('admin.index') }}" title="{{ Auth::user()->name }}" class="ananov-light-text">
+            <i class="ananov-side-icon material-icons">person</i>
+          </a>
+        <a href="{{ route('admin.index') }}" class="ananov-light-text"><i class="ananov-side-icon medium material-icons">settings</i></a>
+        <a href="{{ route('logout') }}" class="ananov-light-text" onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();" title="Выйти(Logout)">
+                  <i class="ananov-side-icon material-icons">directions_run</i></i>
+          </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+        </form>
+      @endguest
+    </div>
+  </li>
+      @include('layouts.top_menu', ['categories' => $categories ])
+</ul>

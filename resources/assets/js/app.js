@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('./materialize.min')
 
 
 //CKEDITOR

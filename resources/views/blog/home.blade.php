@@ -2,28 +2,24 @@
 
 @section('content')
 
-  <div style="min-width:400px">
-      <div class="w3-container w3-content">
-  @forelse ($categories as $category)
+  <div class="">
 
-     <div class="w3-panel w3-card w3-display-container anоnov-second-color">
-       <a href="{{url("/blog/category/$category->slug")}}" class="ananov-second-text-color">
-         <h3>{{$category->title}}</h3>
+  @forelse ($categories as $category)
+    <div class="row" style="margin-bottom:0px;">
+      <div class="col l12 m12 s12">
+     <div class="card ananov-light" style="padding:10px;">
+       <a href="{{url("/blog/category/$category->slug")}}" class="ananov-dark-text">
+         <h4>{{mb_strtoupper($category->title)}}</h4>
        </a>
+     </div>
+     </div>
      </div>
 
   @empty
-    <div class="w3-panel w3-white w3-card w3-display-container">
+    <div class="">
         <h2> Cайт пока пуст </h2>
     </div>
-
   @endforelse
-</div>
-
-
-
-
-
 
 </div>
 @endsection

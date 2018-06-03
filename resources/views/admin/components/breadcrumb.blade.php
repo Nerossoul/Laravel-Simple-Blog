@@ -1,5 +1,9 @@
-<h2>{{$title}}</h2>
-<ol class="breadcrumb ananov-main-color">
-  <li> <a href="{{route('admin.index')}}" class="ananov-main-text-color">{{$parent}}</a> </li>
-  <li class="ananov-main-text-color">{{$active}}</li>
-</ol>
+<h4>{{$title}}</h4>
+<nav class="ananov-dark">
+    <div class="nav-wrapper">
+      <div class="col l12 m12 s12">
+        <a href="{{route('admin.index')}}" class="breadcrumb ananov-dark ananov-light-text">{{$parent}}</a>
+        <a href="#!" class="breadcrumb ananov-dark ananov-light-text">{{$active}}</a>
+      </div>
+    </div>
+</nav>

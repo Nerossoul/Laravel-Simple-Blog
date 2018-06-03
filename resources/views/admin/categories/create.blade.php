@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="container">
+
 
     @component('admin.components.breadcrumb')
       @slot('title') Создание категории @endslot
@@ -13,14 +13,12 @@
 
 
         <hr />
-
+  <div class="container">
         <form class="from-horozontal" action="{{route('admin.category.store')}}" method="post">
           {{ csrf_field() }}
-
           <!-- Form include -->
           @include('admin.categories.partials.form')
         </form>
-
   </div>
 
 @endsection

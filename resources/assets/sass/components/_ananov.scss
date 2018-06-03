@@ -1,0 +1,130 @@
+.underlined {
+  /*  text-decoration:underline;
+font-weight: bold;/*|bolder|lighter|normal|100|200|300|400|500|600|700|800|900*/
+  color: black;
+}
+
+.no_underlined {
+  text-decoration: none;
+}
+
+.no_underlined:hover {
+  text-decoration: none;
+}
+
+.spoiler_open,
+.spoiler_close {
+  display: block;
+  width: 100%;
+  padding-top: 15px;
+  /*background: #fff;*/
+  color: #000;
+  cursor: default;
+  text-decoration: none;
+}
+
+.spoiler_close {
+  display: none;
+}
+
+.spoiler_desc {
+  display: none;
+  width: 100%;
+  /*background: #fff;*/
+  text-decoration: none;
+  color: #000;
+  cursor: default;
+}
+
+.spoiler_open:target {
+  display: none;
+}
+
+.spoiler_open:target+.spoiler_close,
+.spoiler_open:target+.spoiler_close+.spoiler_desc {
+  display: block;
+}
+
+#leftMenu {
+  width: 66%;
+  max-width: 400px;
+  opacity: 1;
+  text-transform: uppercase;
+  transition-property: width, opacity;
+  transition-duration: .3s;
+}
+
+/*.ananov-main-color {
+  background-color: #42505D !important; /* dark */
+/*    color: #edd8bb !important; /* light */
+  /*#F9D5A6 !important;*//* light base */
+/*  }
+
+.ananov-second-color {
+  background-color: #F9D5A6 !important;
+  */ /*color: #42505D !important;
+  */
+/*}
+
+.ananov-main-text-color {
+  color: #F9D5A6 !important;
+}
+
+.ananov-second-text-color {
+  color: #2b343d !important; /* dark-2 */
+  /*#42505D !important;*/
+/*  } */
+
+.ananov-category-container {
+  padding: 0.01em 10px;
+}
+
+.ananov-hide {
+  display: none !important
+}
+
+.ananov-show {
+  display: block !important
+}
+
+.ananov-sidenav-trigger {
+  float: left;
+  position: relative;
+  z-index: 1;
+  height: 56px;
+  margin: 0 18px;
+}
+.ananov-side-icon {
+  font-size: 40px !important;
+}
+
+@media only screen and (max-width: 349px) {
+  .text_size_adapt {
+    font-size: 9px !important;
+  }
+}
+@media only screen and (min-width: 350px) and (max-width: 382px) {
+  .text_size_adapt {
+    font-size: 10px !important;
+  }
+}
+@media only screen and (min-width: 383px) and (max-width: 414px) {
+  .text_size_adapt {
+    font-size: 11px !important;
+  }
+}
+@media only screen and (min-width: 415px) and (max-width: 451px) {
+  .text_size_adapt {
+    font-size: 12px !important;
+  }
+}
+@media only screen and (min-width: 452px) and (max-width: 479px) {
+  .text_size_adapt {
+    font-size: 13px !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .text_size_adapt {
+    font-size: 14px !important;
+  }
+}

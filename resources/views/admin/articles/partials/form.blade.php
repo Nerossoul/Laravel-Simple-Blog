@@ -1,4 +1,4 @@
-<label for="">Статус</label>
+<label for="" class="ananov-dark-text">Статус</label>
 <select class="form-control" name="published">
   @if (isset($article->id))
     <option value="0" @if ($article->published == 0) selected="" @endif>Не опубликовано</option>
@@ -10,12 +10,12 @@
   @endif
 </select>
 
-<label for="">Заголовок текста</label>
-<input type="text" class="form-control" name="title" placeholder="Заголовок статьи" value="{{$article->title or ""}}" required>
+<label for="" class="ananov-dark-text">Заголовок текста</label>
+<input type="text" class="form-control white" name="title" placeholder="Заголовок статьи" value="{{$article->title or ""}}" required>
 
 <!--label for="">Slug (уникальное значение)</label-->
 <input type="hidden" class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$article->slug or ""}}" readonly="">
-<label for="">Выберите категорию</label>
+<label for="" class="ananov-dark-text">Выберите категорию</label>
 <select class="form-control" name="categories[]"> <!-- multiple=""-->
   @include('admin.articles.partials.categories', ['categories' => $categories])
 </select>
@@ -24,7 +24,7 @@
 <!--label for="">Краткое описание</label-->
 <!--textarea name="description_short" id="description-short" class="form-control">{{$article->description_short or ""}}</textarea-->
 
-<label for="">Введите текст статьи</label>
+<label for="" class="ananov-dark-text">Введите текст статьи</label>
 <textarea name="description" id="description" class="form-control">{{$article->description or ""}}</textarea>
 <!--
 <label for="">Мета заголовок</label>
@@ -35,5 +35,5 @@
 <input type="text" class="form-control" name="meta_keyword" placeholder="Ключевые слова, через запятую" value="{{$article->meta_keyword or ""}}">
 -->
 <hr />
-<input class="btn btn-primary ananov-main-color" type="submit" value="Сохранить">
+<input class="btn btn-primary ananov-dark" type="submit" value="Сохранить">
 <hr />

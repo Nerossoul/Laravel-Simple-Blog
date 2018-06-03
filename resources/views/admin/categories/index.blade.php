@@ -9,8 +9,8 @@
   @endcomponent
 
   <hr>
-
-  <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right ananov-main-color"><i class="fa fa-plus-square-o"></i> Создать категорию</a>
+<div class="container">
+  <a href="{{route('admin.category.create')}}" class="btn btn-primary right ananov-dark"><i class="left material-icons">add</i> Создать категорию</a>
 
   <table class="table">
     <thead>
@@ -27,8 +27,8 @@
             <form onsubmit="if(confirm('Удалить?')){ return true }else{ return false }" action="{{route('admin.category.destroy', $category)}}" method="post">
               <input type="hidden" name="_method" value="DELETE">
               {{ csrf_field() }}
-              <a class="btn btn-default" href="{{route('admin.category.edit',$category)}}"> <i class="fa fa-edit"></i></a>
-              <button type="submit"  class="btn" > <i class="fa fa-trash-o"></i> </button>
+              <a class="waves-effect waves-ananov-dark btn ananov-dark ananov-light-text" href="{{route('admin.category.edit',$category)}}"> <i class="material-icons">edit</i></a>
+              <button type="submit"  class="waves-effect waves-ananov-dark btn ananov-dark ananov-light-text" > <i class="material-icons">delete</i> </button>
             </form>
           </td>
         </tr>
@@ -48,4 +48,5 @@
       </tfoot>
     </tbody>
   </table>
+</div>
 @endsection

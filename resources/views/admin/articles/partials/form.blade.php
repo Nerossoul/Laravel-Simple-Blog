@@ -11,7 +11,7 @@
 </select>
 
 <label for="" class="ananov-dark-text">Заголовок текста</label>
-<input type="text" class="form-control white" name="title" placeholder="Заголовок статьи" value="{{$article->title or ""}}" required>
+<input type="text"  class="form-control white" name="title" placeholder="Заголовок статьи" value="{{$article->title or ""}}" required>
 
 <!--label for="">Slug (уникальное значение)</label-->
 <input type="hidden" class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$article->slug or ""}}" readonly="">
@@ -25,7 +25,11 @@
 <!--textarea name="description_short" id="description-short" class="form-control">{{$article->description_short or ""}}</textarea-->
 
 <label for="" class="ananov-dark-text">Введите текст статьи</label>
-<textarea name="description" id="description" class="form-control">{{$article->description or ""}}</textarea>
+<textarea name="description" id="description-1" rows="15" class="form-control">
+  @if (isset($article->description))
+    {{strip_tags($article->description)}}
+  @endif
+</textarea>
 <!--
 <label for="">Мета заголовок</label>
 <input type="text" class="form-control" name="meta_title" placeholder="Meta заголовок" value="{{$article->meta_title or ""}}">

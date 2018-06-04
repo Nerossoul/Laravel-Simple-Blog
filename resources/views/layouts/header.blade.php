@@ -7,7 +7,7 @@
 
 
 <!-- sidebar -->
-<ul id="slide-out" class="sidenav">
+<ul id="slide-out" class="sidenav ananov-dark">
   <li>
     <div class="ananov-dark " style="padding-top:10px;">
       <a href="#" class="sidenav-close ananov-light-text"><i class="ananov-side-icon material-icons">keyboard_arrow_left</i></a>

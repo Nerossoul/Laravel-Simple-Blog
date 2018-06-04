@@ -1,17 +1,17 @@
 <div class="ananov-category-container">
   @forelse ($articles as $article)
       <a href="#spoiler-open-{{$article->id}}" id="spoiler-open-{{$article->id}}" class="spoiler_open text_size_adapt ananov-second-text-color">
-        <span class="underlined">
-          @if (isset((explode('&gt;&gt;&gt;', $article->description))[1]))
-                  {{strip_tags((explode('&gt;&gt;&gt;', $article->description))[0])}}
+        <span class="underlined" style="font-family: 'Roboto Mono', monospace;">
+          @if (isset((explode('>>>', $article->description))[1]))
+                  {{strip_tags((explode('>>>', $article->description))[0])}}
           @else
                   {{mb_substr(strip_tags($article->description), 0, 101)}}
           @endif
           >>></span>
       </a>
-      <a href="#spoiler-close-{{$article->id}}" id="spoiler-close-{{$article->id}}" class="spoiler_close text_size_adapt no_underlined ananov-dark-text text-darken-1">
-        @if (isset((explode('&gt;&gt;&gt;', $article->description))[1]))
-          <span class="underlined">{{strip_tags((explode('&gt;&gt;&gt;', $article->description))[0])}}</span>{{strip_tags((explode('&gt;&gt;&gt;', $article->description))[1])}}
+      <a href="#spoiler-close-{{$article->id}}" id="spoiler-close-{{$article->id}}" class="spoiler_close text_size_adapt no_underlined ananov-dark-text text-darken-1" style="font-family: 'Roboto Mono', monospace;">
+        @if (isset((explode('>>>', $article->description))[1]))
+          <span class="underlined">{{strip_tags((explode('>>>', $article->description))[0])}}</span>{{strip_tags((explode('>>>', $article->description))[1])}}
         @else
           <span class="underlined">{{mb_substr(strip_tags($article->description), 0, 101)}}</span>{!!mb_substr(strip_tags($article->description), 101,strlen($article->description),'UTF-8')!!}
         @endif

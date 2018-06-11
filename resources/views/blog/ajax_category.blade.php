@@ -5,7 +5,7 @@
           @if (isset((explode('>>>', $article->description))[1]))
                   {{strip_tags((explode('>>>', $article->description))[0])}}
           @else
-                  {{mb_substr(strip_tags($article->description), 0, 101)}}
+                  {{mb_substr(strip_tags($article->description), 0, 75)}}
           @endif
           >>></span>
       </a>
@@ -13,7 +13,7 @@
         @if (isset((explode('>>>', $article->description))[1]))
           <span class="underlined">{{strip_tags((explode('>>>', $article->description))[0])}}</span>{{strip_tags((explode('>>>', $article->description))[1])}}
         @else
-          <span class="underlined">{{mb_substr(strip_tags($article->description), 0, 101)}}</span>{!!mb_substr(strip_tags($article->description), 101,strlen($article->description),'UTF-8')!!}
+          <span class="underlined">{{mb_substr(strip_tags($article->description), 0, 75)}}</span>{!!mb_substr(strip_tags($article->description), 75,strlen($article->description),'UTF-8')!!}
         @endif
         @guest
         @else

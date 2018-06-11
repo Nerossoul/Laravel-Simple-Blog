@@ -30,8 +30,7 @@
                 <span id="spoiler-1" class="underlined" style="font-family: 'Roboto Mono', monospace;"></span>
               </a>
               <a href="#spoiler-close-1" id="spoiler-close-1" class="spoiler_close text_size_adapt no_underlined ananov-dark-text text-darken-1" style="font-family: 'Roboto Mono', monospace;">
-                  <span id="spoiler-2" class="underlined"></span>
-                  <span id="full_text"></span>
+                  <span id="spoiler-2" class="underlined"></span><span id="full_text"></span>
               </a>
         </div>
     </div>
@@ -49,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function(){
       }
       else
       {
-        shortDescription = article.value.substring(0, 101);
-        description = article.value.substring(102, 10000000);
+        shortDescription = article.value.substring(0, 75);
+        description = article.value.substring(75, 10000000);
       };
       document.getElementById("spoiler-1").innerHTML = shortDescription+'>>>';
       document.getElementById("spoiler-2").innerHTML = shortDescription;
@@ -70,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function(){
           else
           {
             textOnly = article.value.replace(/<[^>]+>/g,'');
-            shortDescription = textOnly.substring(0, 101);
-            description = textOnly.substring(101, 10000000);
+            shortDescription = textOnly.substring(0, 75);
+            description = textOnly.substring(75, 10000000);
           };
           document.getElementById("spoiler-1").innerHTML = shortDescription+'>>>';
           document.getElementById("spoiler-2").innerHTML = shortDescription;

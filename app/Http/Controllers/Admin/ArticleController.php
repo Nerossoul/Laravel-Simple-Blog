@@ -45,7 +45,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request) // write article data to table articles
     {
-        $request['description_short'] = strip_tags(mb_substr($request['description'], 0, 101));
+        $request['description_short'] = strip_tags(mb_substr($request['description'], 0, 75));
         $article = Article::create($request->all());
 
         //categories
@@ -93,7 +93,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        $request['description_short'] = strip_tags(mb_substr($request['description'], 0, 101));
+        $request['description_short'] = strip_tags(mb_substr($request['description'], 0, 75));
         $article->update($request->except('slug'));
 
         $article->categories()->detach();

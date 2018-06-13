@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);.ananov-dark {
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);.ananov-dark {
   background-color: #42505D !important;
 }
 
@@ -12,6 +12,14 @@
 
 .ananov-dark-text.text-darken-1 {
   color: #2b343d !important;
+}
+
+.ananov-dark.darken-2 {
+  background-color: #191919 !important;
+}
+
+.ananov-dark-text.text-darken-2 {
+  color: #191919 !important;
 }
 
 .ananov-light {
@@ -2655,12 +2663,6 @@ template {
   display: none;
 }
 
-.underlined {
-  /*  text-decoration:underline;
-font-weight: bold;/*|bolder|lighter|normal|100|200|300|400|500|600|700|800|900*/
-  color: black;
-}
-
 .no_underlined {
   text-decoration: none;
 }
@@ -2745,7 +2747,7 @@ font-weight: bold;/*|bolder|lighter|normal|100|200|300|400|500|600|700|800|900*/
 /*  } */
 
 .ananov-category-container {
-  padding: 0.01em 10px;
+  padding: 0.01em 5px;
 }
 
 .ananov-hide {
@@ -2770,151 +2772,151 @@ font-weight: bold;/*|bolder|lighter|normal|100|200|300|400|500|600|700|800|900*/
 
 @media only screen and (max-width: 302px) {
   .text_size_adapt {
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
 }
 
 @media only screen and (min-width: 303px) and (max-width: 312px) {
   .text_size_adapt {
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
 }
 
 @media only screen and (min-width: 313px) and (max-width: 321px) {
   .text_size_adapt {
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
 }
 
 @media only screen and (min-width: 322px) and (max-width: 328px) {
   .text_size_adapt {
-    font-size: 12.25px !important;
+    font-size: 10.25px !important;
   }
 }
 
 @media only screen and (min-width: 329px) and (max-width: 336px) {
   .text_size_adapt {
-    font-size: 12.5px !important;
+    font-size: 10.5px !important;
   }
 }
 
 @media only screen and (min-width: 337px) and (max-width: 344px) {
   .text_size_adapt {
-    font-size: 12.75px !important;
+    font-size: 10.75px !important;
   }
 }
 
 @media only screen and (min-width: 345px) and (max-width: 352px) {
   .text_size_adapt {
-    font-size: 13px !important;
+    font-size: 11px !important;
   }
 }
 
 @media only screen and (min-width: 353px) and (max-width: 360px) {
   .text_size_adapt {
-    font-size: 13.25px !important;
+    font-size: 11.25px !important;
   }
 }
 
 @media only screen and (min-width: 361px) and (max-width: 368px) {
   .text_size_adapt {
-    font-size: 13.5px !important;
+    font-size: 11.5px !important;
   }
 }
 
 @media only screen and (min-width: 369px) and (max-width: 376px) {
   .text_size_adapt {
-    font-size: 13.75px !important;
+    font-size: 11.75px !important;
   }
 }
 
 @media only screen and (min-width: 377px) and (max-width: 384px) {
   .text_size_adapt {
-    font-size: 14px !important;
+    font-size: 12px !important;
   }
 }
 
 @media only screen and (min-width: 385px) and (max-width: 392px) {
   .text_size_adapt {
-    font-size: 14.25px !important;
+    font-size: 12.25px !important;
   }
 }
 
 @media only screen and (min-width: 393px) and (max-width: 400px) {
   .text_size_adapt {
-    font-size: 14.5px !important;
+    font-size: 12.5px !important;
   }
 }
 
 @media only screen and (min-width: 401px) and (max-width: 408px) {
   .text_size_adapt {
-    font-size: 14.75 0.25px !important;
+    font-size: 12.75px !important;
   }
 }
 
 @media only screen and (min-width: 409px) and (max-width: 416px) {
   .text_size_adapt {
-    font-size: 15px !important;
+    font-size: 13px !important;
   }
 }
 
 @media only screen and (min-width: 417px) and (max-width: 424px) {
   .text_size_adapt {
-    font-size: 15.25px !important;
+    font-size: 13.25px !important;
   }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 432px) {
   .text_size_adapt {
-    font-size: 15.5px !important;
+    font-size: 13.5px !important;
   }
 }
 
 @media only screen and (min-width: 433px) and (max-width: 440px) {
   .text_size_adapt {
-    font-size: 15.75px !important;
+    font-size: 13.75px !important;
   }
 }
 
 @media only screen and (min-width: 441px) and (max-width: 448px) {
   .text_size_adapt {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
 }
 
 @media only screen and (min-width: 449px) and (max-width: 456px) {
   .text_size_adapt {
-    font-size: 16.25px !important;
+    font-size: 14.25px !important;
   }
 }
 
 @media only screen and (min-width: 457px) and (max-width: 464px) {
   .text_size_adapt {
-    font-size: 16.5px !important;
+    font-size: 14.5px !important;
   }
 }
 
 @media only screen and (min-width: 465px) and (max-width: 472px) {
   .text_size_adapt {
-    font-size: 16.75px !important;
+    font-size: 14.75px !important;
   }
 }
 
 @media only screen and (min-width: 473px) and (max-width: 479px) {
   .text_size_adapt {
-    font-size: 17px !important;
+    font-size: 15px !important;
   }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 489px) {
   .text_size_adapt {
-    font-size: 17.25px !important;
+    font-size: 15.25px !important;
   }
 }
 
 @media only screen and (min-width: 490px) {
   .text_size_adapt {
-    font-size: 17.5px !important;
+    font-size: 15.5px !important;
   }
 }
 

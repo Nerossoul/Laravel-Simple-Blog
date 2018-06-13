@@ -9,7 +9,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>9671731.org</title>
 
   <!-- Styles -->
   <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">

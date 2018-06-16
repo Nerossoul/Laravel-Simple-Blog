@@ -38,6 +38,14 @@
   color: #edd8bb !important;
 }
 
+.ananov-light.lighten-2 {
+  background-color: #4a8be7 !important;
+}
+
+.ananov-light-text.text-lighten-2 {
+  color: #4a8be7 !important;
+}
+
 .materialize-red {
   background-color: #e51c23 !important;
 }

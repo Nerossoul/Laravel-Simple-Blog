@@ -25,10 +25,10 @@
             <div id="ajax_category_target" style="margin:auto; min-width: 300px; max-width:490px; margin-bottom:40px;">
                 <div class="ananov-category-container">
                       <a href="#spoiler-open-1" id="spoiler-open-1" class="spoiler_open text_size_adapt ananov-dark-text text-darken-2">
-                        <span id="spoiler-1" class="underlined" style="font-family: 'Roboto', sans-serif;"></span>
+                        <span class="ananov-light-text text-lighten-2" id="spoiler-1" class="underlined" style="font-family: 'Roboto', sans-serif;"></span>
                       </a>
                       <a href="#spoiler-close-1" id="spoiler-close-1" class="spoiler_close text_size_adapt no_underlined ananov-dark-text text-darken-2" style="font-family: 'Roboto', sans-serif;">
-                          <span id="spoiler-2" class="underlined" style="font-weight:500;"></span><span id="full_text"></span>
+                          <span class="ananov-light-text text-lighten-2" id="spoiler-2" class="underlined" style="font-weight:500;"></span><span id="full_text"></span>
                       </a>
                 </div>
             </div>
